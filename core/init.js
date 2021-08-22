@@ -11,24 +11,23 @@ class InitManager {
 
     // 读取路由
     static initLoadRouters(){
-        const apiDirectory = `${process.cwd()}/app/api`
+        const apiDirectory = `${process.cwd()}/app/controller`
         const hash = requireDirectory(module,apiDirectory,{
             visit: whenLoadModule
         })
         function whenLoadModule(obj){
             if(obj instanceof Router){
-                // console.log(obj.routes());
                 InitManager.app.use(obj.routes())
             }
         }
     }
-    // 读取配置
+    // 保存全局配置
     static loadConfig(path = ''){
         const configPath = path || process.cwd() + '/config/config.js'
         const config = require(configPath)
         global.config = config
     }
-
+    // 保存全局错误类型
     static loadHttpException(){
         const errors = require('./http-exception')
         global.errs = errors

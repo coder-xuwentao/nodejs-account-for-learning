@@ -1,6 +1,7 @@
-var md5 = require("md5");
+const md5 = require("md5");
 const { sequelize } = require("@core/db");
 const { Model, DataTypes } = require("sequelize");
+const salt = "salt123";
 
 class Admin extends Model {}
 
@@ -21,7 +22,6 @@ Admin.init(
         password: {
             type: DataTypes.STRING,
             set(val) {
-                const salt = "salt123";
                 const psw = md5(salt + val);
                 this.setDataValue("password", psw);
             },
@@ -47,6 +47,9 @@ Admin.init(
         modelName: "admin",
     }
 );
+
+
 module.exports = {
     Admin,
+    salt
 };

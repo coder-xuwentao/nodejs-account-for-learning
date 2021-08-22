@@ -17,13 +17,16 @@ const sequelize = new Sequelize(dbName, user, password, {
         deleteAt: "deleted_at",
         underscored: true,
         scopes: {
-            bh: {
+            excPwdAndTime: {
                 attributes: {
                     exclude: [
                         "password",
                         "update_at",
                         "deleted_at",
                         "created_at",
+                        "updatedAt",
+                        "deletedAt",
+                        "createdAt",
                     ],
                 },
             },
@@ -40,7 +43,7 @@ const sequelize = new Sequelize(dbName, user, password, {
 sequelize.sync({force:false})
 
 sequelize.authenticate().then(res => {
-    console.log('Connection has been established succeseefully.');
+    console.log('Mysql connection has been established succeseefully.');
 }).catch(err => {
     console.error('Unable to connect to the database:' ,err)
 })

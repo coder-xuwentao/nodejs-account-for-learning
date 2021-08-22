@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/shakexu1/nodejs-shakeblog#readme",
   "dependencies": {
+    "basic-auth": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
@@ -30,6 +31,7 @@
     "koa2-cors": "^2.0.6",
     "md5": "^2.3.0",
     "module-alias": "^2.2.2",
+    "mysql2": "^2.3.0",
     "require-directory": "^2.1.1",
     "sequelize": "^6.6.5"
   },
@@ -38,9 +40,9 @@
     "@app": "app",
     "@core": "core",
     "@middlewares": "middlewares",
-    "@api": "app/api",
+    "@controller": "app/controller",
     "@dao": "app/dao",
-    "@lib": "app/lib",
+    "@extend": "app/extend",
     "@models": "app/models",
     "@service": "app/service",
     "@validators": "app/validators"
