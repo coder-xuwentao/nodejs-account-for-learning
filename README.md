@@ -17,7 +17,7 @@ $ CREATE DATABASE IF NOT EXISTS shakeblog DEFAULT CHARACTER SET utf8mb4 COLLATE 
 ### 3、以下是启动服务端项目的操作命令：
 ```
 # 进入项目根目录
-$ cd nodejs-koa-blog
+$ cd nodejs-account-for-learning
 
 # 安装依赖包
 $ npm install
